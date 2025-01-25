@@ -1,4 +1,5 @@
-@import url("Your Font of Choice");
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Young+Serif&display=swap');
+
 
 /* || REST */
 * {
@@ -15,24 +16,29 @@ img {
 
 /* || VARIABLES */
 :root {
-
-   /* COLORS */
-   --BGCOLOR: #F3E5D7;
-   --HERO-COLOR: #312E2C;
-   --TITLE-COLOR: #854632;
-   --ONE-TITLE-COLOR: #7A284E;
-   --BODY-COLOR: #5F564D;
-   --BORDER-COLOR: #E3DDD7;
-   --BORDER-BGCOLOR: #FFF7FB;
-
-  /* GRADIENTS */
+  /* COLORS */
+  --ROSE-50: #FFF7FB ;
+  --ROSE-800: #7A284E;
+  --STONE-100: #F3E5D7;
+  --STONE-150: #E3DDD7;
+  --STONE-600: #5F564D;
+  --STONE-900: #312E2C;
+  --BROWN-800: #854632;
+  --WHITE: #FFFFFF;
 
   /* TYPOGRAPHY */
-   --FF: "Outfit", sans-serif;
-   --FF-HEADINGS: "Young Serif", cursive;
-   --FS: clamp(1rem, 2.2vh, 1.5rem);
+  --FF1: "Young Serif", serif;
+  --FF2: "Outfit", serif;
 
+  /* DESKTOP */
+  --TEXT-PRESET-1: normal 40px/100% var(--FF1);
+  --TEXT-PRESET-2: normal 28px/100% var(--FF1);
+  --TEXT-PRESET-3: normal 20px/100% var(--FF2);
+  --TEXT-PRESET-4: normal 16px/150% var(--FF2);
+  --TEXT-PRESET-4-BOLD: bold 16px/150% var(--FF2);
 
+  /* MOBILE */
+  --TEXT-PRESET-1-MOB: normal 36px/100% var(--FF1);
 }
 
 /* || UTILITY CLASSES */
@@ -53,6 +59,10 @@ img {
   display: none;
 }
 
+.bold {
+  font-weight: bold;
+}
+
 /* MOBILE FIRST DESIGN */
 /* || GENERAL STYLES */
 html {
@@ -65,170 +75,276 @@ body {
   overflow-x: hidden;
 }
 
-.main {
-    padding: 40px 32px;
-    display: flex;
-    flex-flow: column;
-    font-family: var(--FF);
-    color: var(--BODY-COLOR);
-    line-height: 2rem;
-}
-
 h1,
-h2 {
+h2,
+h3 {
   margin: 0;
   padding: 0;
+  font-size: inherit;
   font-weight: normal;
-  font-family: var(--FF-HEADINGS);
-  margin-bottom: 0.5rem;
 }
-
-ul, ol {
-  list-style-position: inside;
-}
-
-ul::marker {
-  padding-right: 20px;
-}
-
-
-.main__article {
-    width: 100%;
-    height: auto;
-    padding: 0;
-    margin: 0.75rem 0 0.75rem 0 ;
-}
-
-.main__article--2 {
-    background-color: var(--BORDER-BGCOLOR);
-    border-radius: 10px;
-    padding: 0 32px;
-}
-.main__article span {
-    font-weight: bold;
-}
-
-.main__article h1 {
-    margin-top: 0;
-    font-size: 2rem;
-    color: var(--HERO-COLOR);
-    line-height: 2rem;
-}
-
-.main__article h2 {
-    
-    color: var(--TITLE-COLOR);
-    line-height: 2rem;
-}
-
-/* || NUTRITION */
-
-tbody{
-  display: contents;
-}
-
-.nutrition__table {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-areas: 
-    "n1 n1"
-    "n2 n2"
-    "n3 n3"
-    "n4 n4";
-    gap: 0.1em;
-    margin-bottom: 1em;
-}
-
-
-.value {
-  font-weight: bold;
-  color: var(--TITLE-COLOR);
-}
-
-.nutrition__item {
-  border-bottom: 1px solid var(--BORDER-COLOR);
-  display: flex;
-  flex-flow: row nowrap;
-  place-content: center;
-  padding: 0.5em;
-}
-
-
-
-h3 {
-    font-family: var(--FF);
-    margin-bottom: 0.5rem;
-    color: var(--ONE-TITLE-COLOR);
-}
-
-
 
 a:any-link {
   text-decoration: none;
   color: black;
 }
 
-/* HEADER STYLE */
-img {
-    width: 100%;
-    height: 170px;
+
+/* CARD */
+/* CARD CONTAINER */
+.card-container {
+  width: 100%;
 }
 
-/* DESKTOP FIRST DESIGN */
-/* || GENERAL STYLES */
-
-@media screen and (min-width: 576px) {
-  body {
-    min-height: 100vh;
-    max-width: 100%;
-    background-color: var(--BGCOLOR);
-  }
-
-  .container {
-    background-color: #FFf;
-    margin: 10% 10%;
-    border-radius: 15px;
-    padding: 32px;
-  }
-
-  img {
-    width: 100%;
-    height: 330px;
-    border-radius: 15px;
-  }
-
-  .main {
-    padding: 40px 0;
-  }
-
+/* CARD TEXT CONTENT */
+.text-content {
+  margin: 40px 32px;
 }
 
-/* DESKTOP FIRST DESIGN */
-/* || GENERAL STYLES */
+/* TITLE */
+.text-content__title {
+  margin-bottom: 32px;
+}
+
+.title__h1{
+  font:var(--TEXT-PRESET-1-MOB) ;
+  color: var(--STONE-900);
+  margin-bottom: 24px;
+}
+
+.title__substitle {
+  font: var(--TEXT-PRESET-4);
+  color: var(--STONE-600);
+}
+
+/* PREPARATION */
+.text-content__preparation {
+  width: 100%;
+  height: 196px;
+  background-color: var(--ROSE-50);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 32px;
+}
+
+.preparation__title {
+  font: var(--TEXT-PRESET-3);
+  color: var(--ROSE-800);
+  margin-bottom: 16px;
+}
+
+.preparation__ul, .ingredients__ul {
+  list-style: none;
+}
+
+.preparation__ul li:first-child p{
+  width: 215px;
+}
+
+.preparation__ul li, .ingredients__ul li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  font: var(--TEXT-PRESET-4);
+  color: var(--STONE-600);
+}
+
+.preparation__ul li:last-child,
+.ingredients__ul li:last-child {
+  margin-bottom: 0;
+}
+
+.preparation__ul li::before,
+.ingredients__ul li::before {
+  content: "•";
+  font-size: 24px;
+  color: var(--ROSE-800);
+  margin-right: 16px;
+}
+
+/* INGREDINTS */
+.text-content__ingredients {
+  margin-bottom: 32px;
+}
+
+.ingredients__title {
+  font: var(--TEXT-PRESET-2);
+  color: var(--BROWN-800);
+  margin-bottom: 24px;
+}
+
+.ingredients__ul li::before{
+  color: var(--BROWN-800);
+}
+
+/* LINES */
+.line {
+  width: 100%;
+  height: 1px;
+  background-color: var(--STONE-150);
+  margin-bottom: 32px;
+}
+
+/* INSTRUCTIONS */
+.text-content__instructions {
+  margin-bottom: 32px;
+}
+
+.instructions__title {
+  font: var(--TEXT-PRESET-2);
+  color: var(--BROWN-800);
+  margin-bottom: 24px;
+}
+
+.instructions__ol {
+  counter-reset: list-counter;
+  list-style: none;
+}
+
+.instructions__ol li p {
+  width: 250px;
+  font: var(--TEXT-PRESET-4);
+  color: var(--STONE-600);
+}
+
+.instructions__ol li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.instructions__ol li:last-child {
+  margin-bottom: 0;
+}
+
+.instructions__ol li::before {
+  counter-increment: list-counter;
+  content: counter(list-counter) ". ";
+  font: var(--TEXT-PRESET-4-BOLD);
+  color: var(--BROWN-800);
+  margin-right: 16px;
+}
+
+/* NUTRITION */
+.nutrition__title {
+  font: var(--TEXT-PRESET-2);
+  color: var(--BROWN-800);
+  margin-bottom: 24px;
+}
+
+.nutrition__subtitle {
+  font: var(--TEXT-PRESET-4);
+  color: var(--STONE-600);
+  margin-bottom: 24px;
+}
+
+.flex-table {
+  display: flex;
+  flex-flow: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.flex-table-row {
+  display: flex;
+  align-items: center;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--STONE-150);
+  width: 100%;
+  gap: 16px;
+}
+
+.flex-table-row:last-child {
+  border-bottom: 0px solid var(--STONE-150);
+}
+
+.nutrition {
+  font: var(--TEXT-PRESET-4);
+  color: var(--STONE-600);
+  width: 115.5px;
+  margin-left: 32px;
+}
+
+.nutrition-value {
+  font: var(--TEXT-PRESET-4-BOLD);
+  color: var(--BROWN-800);
+  width: 115.5px;
+}
+
+/* TABLET */
 
 @media screen and (min-width: 768px) {
   body {
-    min-height: 100vh;
-    max-width: 100%;
-    background-color: var(--BGCOLOR);
+    display: grid;
+    place-content: center;
+    background-color: var(--STONE-100);
   }
 
-  .container {
-    background-color: #FFf;
-    margin: 10% 20%;
-    border-radius: 15px;
-    padding: 32px;
+  /* CARD */
+  .card-container {
+    width: 616px;
+    height: 1844px;
+    background-color: var(--WHITE);
+    border-radius: 24px;
+    margin: 128px 76px;
   }
 
-  img {
+  /* CARD HERO */
+  .card-hero {
+    margin: 40px 40px 0 40px;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  /* CARD TEXT CONTENT */
+  .text-content {
+    margin: 40px;
+  }
+
+  /* TITLE */
+  .title__h1{
+    font:var(--TEXT-PRESET-1) ;
+  }
+
+  /* PREPARATION */
+  .text-content__preparation {
+    height: 172px;
+  }
+
+  .preparation__ul li:first-child p{
     width: 100%;
-    height: 330px;
-    border-radius: 15px;
   }
 
-  .main {
-    padding: 40px 0;
+  /* INSTRUCTIONS */
+  .instructions__ol li p {
+    width: 496px;
   }
 
+  /* NUTRITION */
+  .nutrition, 
+  .nutrition-value {
+    width: 228px;
+  }
 }
 
+/* DESKTOP */
+@media screen and (min-width: 992px) {
+
+  /* CARD */
+  .card-container {
+    width: 736px;
+    height: 1700px;
+    margin: 128px 352px;
+  }
+
+  /* INSTRUCTIONS */
+  .instructions__ol li p {
+    width: 616px;
+  }
+
+  /* NUTRITION */
+  .nutrition, 
+  .nutrition-value {
+    width: 288px;
+  }
+}
